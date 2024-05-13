@@ -11,6 +11,7 @@ function App() {
   const dispatch = useDispatch();
   const isAuth = useSelector(selectIsAuth);
 
+  // 3:16:06
   React.useEffect(() => {
     dispatch(fetchAuthMe());
   }, [])
