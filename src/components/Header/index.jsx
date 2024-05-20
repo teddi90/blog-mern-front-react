@@ -14,6 +14,7 @@ export const Header = () => {
   const onClickLogout = () => {
     if (window.confirm('Are you sure you want to logout')) {
       dispatch(logout());
+      window.localStorage.removeItem('token');
     }
   };
   return (
@@ -26,7 +27,7 @@ export const Header = () => {
           <div className={styles.buttons}>
             {isAuth ? (
               <>
-                <Link to="/posts/create">
+                <Link to="/add-post">
                   <Button variant="contained">Add post</Button>
                 </Link>
                 <Button onClick={onClickLogout} variant="contained" color="error">
